@@ -1,0 +1,391 @@
+{
+  "id": 646,
+  "date": "2022-07-14T17:20:00",
+  "date_gmt": "2022-07-14T17:20:00",
+  "guid": {
+    "rendered": "http://tblocks.com/?p=646"
+  },
+  "modified": "2023-02-16T16:45:44",
+  "modified_gmt": "2023-02-16T16:45:44",
+  "slug": "common-issues-with-developing-bluetooth-wearables-ble",
+  "status": "publish",
+  "type": "post",
+  "link": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/",
+  "title": {
+    "rendered": "Common Issues With Developing Bluetooth Wearables (BLE)"
+  },
+  "content": {
+    "rendered": "\n<p>Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously. However, manufacturers have the final say on the number of connected devices, which most makers recommend being limited to no more than four.</p>\n\n\n\n<p>The Bluetooth Low Energy (BLE) standard is designed to consume much less power than its predecessor. It enables apps to communicate with devices without guzzling power, such as sensors, heart rate monitors, and fitness trackers. It stays in sleep mode until a connection is established. Although this isn&#8217;t ideal for phone calls, it is critical for applications that need to exchange small amounts of data regularly. This standard is also preferable for quick data transfer as transfer speeds can reach 1 Mb/s. Currently, it is one of the most widely utilized wireless technologies.</p>\n\n\n\n<h2 class=\"wp-block-heading\">Key terms and ideas</h2>\n\n\n\n<p>Here&#8217;s a glossary of crucial BLE terms and concepts:</p>\n\n\n\n<p><strong>Profile of Generic Attributes (GATT)</strong><br>The GATT profile is a generic protocol for delivering and receiving short chunks of data known as “attributes” via a Bluetooth Low Energy (BLE) channel. GATT is the foundation of all existing BLE application profiles.</p>\n\n\n\n<p><br><strong>Profiles</strong><br>Several Bluetooth SIG profiles define Bluetooth Low Energy devices. Per its profile, a device should behave in a certain way in each application. A device may support various profiles. For instance, a gadget may have a heart rate monitor, battery level indicator, or both.</p>\n\n\n\n<p><br><strong>Attributes protocol (ATT)</strong><br>The Bluetooth Low Energy (BLE) protocol stack comprises the Attribute Protocol (ATT). It specifies how data is represented in a BLE server database and the techniques for reading and writing it. A fitness tracker, for example, collects information about your steps and heart rate. It functions as a server, storing this information until a client, for example, a smartphone, requests it. This information is saved as attributes on the BLE server.</p>\n\n\n\n<p><br><strong>Characteristic</strong><br>Characteristics are always components of a service and represent data and information that a Server wishes to make available to a client. For example, clients can read the battery’s remaining power in a device by reading the Battery Level Characteristic.</p>\n\n\n\n<p><br><strong>Descriptor</strong><br>Descriptors are qualities that describe a characteristic value. Among descriptors, one might find a human-readable description, a range of acceptable values, or a unit of measure specific to a value.</p>\n\n\n\n<p><br><strong>Service</strong><br>A service has sever al characteristics. You may, for instance, offer a service titled “Heart Rate Monitor” that contains features like “heart rate measurement.”</p>\n\n\n\n<h2 class=\"wp-block-heading\">Issues with Bluetooth Low Energy</h2>\n\n\n\n<p>According to the recent Bluetooth Low Energy 5 release, SIG considers that BLE 4.x has two significant disadvantages:</p>\n\n\n\n<p><strong>Too limited range</strong><br>Unlike cellular and Wi-Fi devices, users cannot utilize them for long-distance wireless communications. It has a range of up to 200 meters in LOS (Line of Sight)</p>\n\n\n\n<p><br><strong>The speed is too slow</strong><br>Because of wireless transmission/reception vulnerability to interception and attack, its speed is plodding.</p>\n\n\n\n<p>However, some people disagree. Almost no other publication (or speaker) emphasizes the importance of these difficulties for BLE. Instead, other issues are raised. Based on the expertise working with hardware vendors to design software and firmware, here are a few critical difficulties with BLE:</p>\n\n\n\n<h2 class=\"wp-block-heading\">Bluetooth Safety</h2>\n\n\n\n<p>While <a href=\"https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=286439\" target=\"_blank\" rel=\"noreferrer noopener\">Bluetooth Core Specification 4.2</a> provides adequate security across multiple layers, the issue stems from the other side: proper implementation. Device manufacturers do not appear to take security features seriously enough. Many wearable technology firms are eager to get their goods to market as soon as possible, with security sometimes thrown on as an afterthought. It is critical to emphasize this problem. If the initial connection and pairing are sniffed, Bluetooth v4.0 and v4.1 devices are unsafe (Bluetooth v4.2 is much more secure). Both devices must support LE Secure Connections to maintain security. Otherwise, it will be easy to determine who manufactured a specific BLE device. What&#8217;s the significance of this aspect? Here are a few pointers:</p>\n\n\n\n<p><strong>Case 1: Determine who is who</strong><br>A well-known method for determining which BLE devices are nearby is by using a “sniffer.” It is simple to link a gadget to a specific individual, such as a celebrity, CEO, or police officer leading an inquiry into your organization. It is frequently utilized in wearable devices. Many wearable devices contain personal information about a person’s health and living patterns. Privacy may be the most critical aspect for wearable BLE modules to maintain.</p>\n\n\n\n<p><br><strong>Case 2: Concerns about mobile payments</strong><br>Customers can use BLE to make payments. NFC remains more popular than BLE, the favored technology for in-store mobile payment transactions. It is because, for a BLE, the source is far away . NFC works within five cm of each other, but BLE sends signals across much greater distances. Malicious agents could potentially intercept BLE signals.</p>\n\n\n\n<p><br><strong>Case 3: General hacking</strong><br>Excellent practical research demonstrates clearly how malicious actors may intercept BLE traffic. They can reconstruct intercepted packets into connection streams. An attack against the key exchange mechanism is feasible, rendering the encryption worthless against passive eavesdroppers. Further, a sniffer may also follow connections created during the sniffing time.</p>\n\n\n\n<h2 class=\"wp-block-heading\">Mesh interaction</h2>\n\n\n\n<p>Every day, the number of gadgets interacting with one another grows. That is why it is critical to be able to work in a mesh network. BLE is typically used for point-to-point and point-to-multipoint communication. However, no clear information is provided about how many BLE nodes might be in a network with a mesh architecture without substantial downtime and battery drain. Because the theoretical limit is roughly 500 nodes, the hope is that a single BLE node can &#8220;speak&#8221; to several hundred nodes simultaneously.</p>\n\n\n\n<p>Bluetooth LE devices are designed for lightning-fast connection, the transmission of short bursts of tiny packets of data, and disconnection. As more links occur in a mesh network, it will result in a longer setup time due to faster battery depletion. However, ZigBee was explicitly created for Smart Home technology, which uses a mesh topology. Lower energy consumption is feasible for ZigBee Smart Energy devices, but there is still no clarity on what current or voltage these chips consume.</p>\n\n\n\n<p>BLE Cost Beacons are a relatively new concept that is still not inexpensive. The cost of BLE chips and beacons ranges from $1 to $8 (based on alibaba.com search information). This price is comparable to the ZigBee chip and module range. However, NFC and RFID tags are significantly less expensive. Individual tags are in the price range of $0.10 to $0.60, depending on the specifications. Perhaps comparing NFC tags to BLE beacons is a little off. However, it should be affordable if someone wants to use BLE for mobile payments. Because of the cost and interoperability of financial transactions, NFC has an advantage over BLE in busy establishments, where a customer has never visited, large retailers, or perhaps, public transportation. Compared to NFC, the investments required for BLE payment transactions are now higher.</p>\n\n\n\n<h2 class=\"wp-block-heading\">What needs to be done?</h2>\n\n\n\n<p>These are crucial factors to consider if you&#8217;re developing a BLE-enabled app.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Improve the onboarding experience</h3>\n\n\n\n<p>It&#8217;s possible that your Bluetooth device needs some further configuration before it can function. Drawings, images, and videos are essential materials to include in the onboarding process, particularly if you want the user to press a button, scan a code, or attach your gadget in a specific manner. Images and videos can save you time that would otherwise be spent on copywriting and translations. Users profit from this since they can see what they need to do. It also demonstrates that you are serious about your product and willing to go the extra mile to provide the most satisfactory experience possible.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Request permission</h3>\n\n\n\n<p>Another crucial point to consider while developing a BLE mobile app is permissions. BLE apps require approval for Bluetooth and, in some cases, location services to function effectively.</p>\n\n\n\n<h2 class=\"wp-block-heading\">So, what are your options?</h2>\n\n\n\n<p><strong>Consider the content that the user reads</strong>: remember to explain why you&#8217;re requesting permission and how they will affect the user experience so that users can make informed decisions. Keep things brief to improve reading.</p>\n\n\n\n<p><strong>Consider when to ask for permission </strong>: if you don&#8217;t want to make a wrong first impression, don&#8217;t bombard the user with requests immediately. Instead, spread it out during the onboarding period or show it the first time you use the feature. It is critical to ensure that it makes sense to the user and is justified.</p>\n\n\n\n<p><strong>Support follow-up dialogs</strong>:inform users of their missing benefits if they decline one of your necessary permissions. It could also be a mistake, in which case the user should be able to correct it.</p>\n\n\n\n<h2 class=\"wp-block-heading\">Make it easier to recognize a gadget</h2>\n\n\n\n<p>Bluetooth devices utilize lengthy unique IDs that are difficult to remember. Make someone&#8217;s life easier by masking some complexity if they must deal with many gadgets. Buttons, signal range, QR codes – numerous cues can assist in determining the correct device. Furthermore, in the case of many devices, allow users to modify their names or icons to make them more familiar.</p>\n\n\n\n<h2 class=\"wp-block-heading\">Test the app with users on several devices</h2>\n\n\n\n<p>Although QA testing of any app is recommended, real-world scenarios can yield eye-opening information. You might see something new when you put your clients in front of the app and the device. It&#8217;s an invaluable tool for testing assumptions, identifying roadblocks, and identifying potential improvements.</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously. However, manufacturers have the final say on the number of connected devices, which most makers [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 9,
+  "featured_media": 5829,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+    "content-type": ""
+  },
+  "categories": [
+    1
+  ],
+  "tb_industry": [
+    25
+  ],
+  "tb_solution": [
+    397
+  ],
+  "tb_technology": [
+    149
+  ],
+  "acf": {
+    "tb_author": "",
+    "categories": 1,
+    "primary_industry": "healthcare",
+    "industries": [
+      25
+    ],
+    "primary_solution": "wearables",
+    "solutions": [
+      397
+    ],
+    "primary_technology": 149,
+    "technologies": [
+      149
+    ]
+  },
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v19.14 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Common issues with developing Bluetooth Wearables (BLE)</title>\n<meta name=\"description\" content=\"Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.\" />\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Common issues with developing Bluetooth Wearables (BLE)\" />\n<meta property=\"og:description\" content=\"Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.\" />\n<meta property=\"og:url\" content=\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/\" />\n<meta property=\"og:site_name\" content=\"Techblocks\" />\n<meta property=\"article:publisher\" content=\"https://www.facebook.com/TechBlocks/\" />\n<meta property=\"article:published_time\" content=\"2022-07-14T17:20:00+00:00\" />\n<meta property=\"article:modified_time\" content=\"2023-02-16T16:45:44+00:00\" />\n<meta property=\"og:image\" content=\"https://tblocks.com/wp-content/uploads/2022/07/Rectangle-43.webp\" />\n\t<meta property=\"og:image:width\" content=\"480\" />\n\t<meta property=\"og:image:height\" content=\"360\" />\n\t<meta property=\"og:image:type\" content=\"image/webp\" />\n<meta name=\"author\" content=\"Sabih Siddiqui\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Common issues with developing Bluetooth Wearables (BLE)\" />\n<meta name=\"twitter:description\" content=\"Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.\" />\n<meta name=\"twitter:image\" content=\"https://tblocks.com/wp-content/uploads/2022/07/Rectangle-43.webp\" />\n<meta name=\"twitter:creator\" content=\"@techblocks\" />\n<meta name=\"twitter:site\" content=\"@techblocks\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n\t<meta name=\"twitter:data1\" content=\"Sabih Siddiqui\" />\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\" />\n\t<meta name=\"twitter:data2\" content=\"7 minutes\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#article\",\"isPartOf\":{\"@id\":\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/\"},\"author\":{\"name\":\"Sabih Siddiqui\",\"@id\":\"https://tblocks.com/#/schema/person/aeda39b89c2f748b48ec4c21d59e389b\"},\"headline\":\"Common Issues With Developing Bluetooth Wearables (BLE)\",\"datePublished\":\"2022-07-14T17:20:00+00:00\",\"dateModified\":\"2023-02-16T16:45:44+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/\"},\"wordCount\":1549,\"commentCount\":0,\"publisher\":{\"@id\":\"https://tblocks.com/#organization\"},\"articleSection\":[\"Articles\"],\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#respond\"]}]},{\"@type\":\"WebPage\",\"@id\":\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/\",\"url\":\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/\",\"name\":\"Common issues with developing Bluetooth Wearables (BLE)\",\"isPartOf\":{\"@id\":\"https://tblocks.com/#website\"},\"datePublished\":\"2022-07-14T17:20:00+00:00\",\"dateModified\":\"2023-02-16T16:45:44+00:00\",\"description\":\"Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.\",\"breadcrumb\":{\"@id\":\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tblocks.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Common Issues With Developing Bluetooth Wearables (BLE)\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tblocks.com/#website\",\"url\":\"https://tblocks.com/\",\"name\":\"Techblocks\",\"description\":\"Digital Product Engineering, Strategy, and Consulting\",\"publisher\":{\"@id\":\"https://tblocks.com/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tblocks.com/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https://tblocks.com/#organization\",\"name\":\"Techblocks\",\"url\":\"https://tblocks.com/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://tblocks.com/#/schema/logo/image/\",\"url\":\"https://tblocks.com/wp-content/uploads/2022/10/tb-logo-dark.svg\",\"contentUrl\":\"https://tblocks.com/wp-content/uploads/2022/10/tb-logo-dark.svg\",\"width\":250,\"height\":60,\"caption\":\"Techblocks\"},\"image\":{\"@id\":\"https://tblocks.com/#/schema/logo/image/\"},\"sameAs\":[\"https://www.linkedin.com/company/246898/admin/\",\"https://www.facebook.com/TechBlocks/\",\"https://twitter.com/techblocks\"]},{\"@type\":\"Person\",\"@id\":\"https://tblocks.com/#/schema/person/aeda39b89c2f748b48ec4c21d59e389b\",\"name\":\"Sabih Siddiqui\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://tblocks.com/#/schema/person/image/\",\"url\":\"https://secure.gravatar.com/avatar/d56a6affae134f81924b6524d5eb327f?s=96&d=mm&r=g\",\"contentUrl\":\"https://secure.gravatar.com/avatar/d56a6affae134f81924b6524d5eb327f?s=96&d=mm&r=g\",\"caption\":\"Sabih Siddiqui\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+    "title": "Common issues with developing Bluetooth Wearables (BLE)",
+    "description": "Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.",
+    "robots": {
+      "index": "index",
+      "follow": "follow",
+      "max-snippet": "max-snippet:-1",
+      "max-image-preview": "max-image-preview:large",
+      "max-video-preview": "max-video-preview:-1"
+    },
+    "canonical": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/",
+    "og_locale": "en_US",
+    "og_type": "article",
+    "og_title": "Common issues with developing Bluetooth Wearables (BLE)",
+    "og_description": "Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.",
+    "og_url": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/",
+    "og_site_name": "Techblocks",
+    "article_publisher": "https://www.facebook.com/TechBlocks/",
+    "article_published_time": "2022-07-14T17:20:00+00:00",
+    "article_modified_time": "2023-02-16T16:45:44+00:00",
+    "og_image": [
+      {
+        "width": 480,
+        "height": 360,
+        "url": "https://tblocks.com/wp-content/uploads/2022/07/Rectangle-43.webp",
+        "type": "image/webp"
+      }
+    ],
+    "author": "Sabih Siddiqui",
+    "twitter_card": "summary_large_image",
+    "twitter_title": "Common issues with developing Bluetooth Wearables (BLE)",
+    "twitter_description": "Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.",
+    "twitter_image": "https://tblocks.com/wp-content/uploads/2022/07/Rectangle-43.webp",
+    "twitter_creator": "@techblocks",
+    "twitter_site": "@techblocks",
+    "twitter_misc": {
+      "Written by": "Sabih Siddiqui",
+      "Est. reading time": "7 minutes"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#article",
+          "isPartOf": {
+            "@id": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/"
+          },
+          "author": {
+            "name": "Sabih Siddiqui",
+            "@id": "https://tblocks.com/#/schema/person/aeda39b89c2f748b48ec4c21d59e389b"
+          },
+          "headline": "Common Issues With Developing Bluetooth Wearables (BLE)",
+          "datePublished": "2022-07-14T17:20:00+00:00",
+          "dateModified": "2023-02-16T16:45:44+00:00",
+          "mainEntityOfPage": {
+            "@id": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/"
+          },
+          "wordCount": 1549,
+          "commentCount": 0,
+          "publisher": {
+            "@id": "https://tblocks.com/#organization"
+          },
+          "articleSection": [
+            "Articles"
+          ],
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "CommentAction",
+              "name": "Comment",
+              "target": [
+                "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#respond"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/",
+          "url": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/",
+          "name": "Common issues with developing Bluetooth Wearables (BLE)",
+          "isPartOf": {
+            "@id": "https://tblocks.com/#website"
+          },
+          "datePublished": "2022-07-14T17:20:00+00:00",
+          "dateModified": "2023-02-16T16:45:44+00:00",
+          "description": "Bluetooth Low Energy (BLE) is a low-power wireless technology for short-range communication between smart devices. Introduced in 2011 as Bluetooth 4.0, it enables smartphones or devices running on iOS, Windows, and Android to connect to up to seven devices simultaneously.",
+          "breadcrumb": {
+            "@id": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://tblocks.com/common-issues-with-developing-bluetooth-wearables-ble/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://tblocks.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Common Issues With Developing Bluetooth Wearables (BLE)"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://tblocks.com/#website",
+          "url": "https://tblocks.com/",
+          "name": "Techblocks",
+          "description": "Digital Product Engineering, Strategy, and Consulting",
+          "publisher": {
+            "@id": "https://tblocks.com/#organization"
+          },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://tblocks.com/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://tblocks.com/#organization",
+          "name": "Techblocks",
+          "url": "https://tblocks.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://tblocks.com/#/schema/logo/image/",
+            "url": "https://tblocks.com/wp-content/uploads/2022/10/tb-logo-dark.svg",
+            "contentUrl": "https://tblocks.com/wp-content/uploads/2022/10/tb-logo-dark.svg",
+            "width": 250,
+            "height": 60,
+            "caption": "Techblocks"
+          },
+          "image": {
+            "@id": "https://tblocks.com/#/schema/logo/image/"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/246898/admin/",
+            "https://www.facebook.com/TechBlocks/",
+            "https://twitter.com/techblocks"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://tblocks.com/#/schema/person/aeda39b89c2f748b48ec4c21d59e389b",
+          "name": "Sabih Siddiqui",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://tblocks.com/#/schema/person/image/",
+            "url": "https://secure.gravatar.com/avatar/d56a6affae134f81924b6524d5eb327f?s=96&d=mm&r=g",
+            "contentUrl": "https://secure.gravatar.com/avatar/d56a6affae134f81924b6524d5eb327f?s=96&d=mm&r=g",
+            "caption": "Sabih Siddiqui"
+          }
+        }
+      ]
+    }
+  },
+  "featured_image_url": "https://tblocks.com/wp-content/uploads/2022/07/Rectangle-43.webp",
+  "author_name": "Sabih Siddiqui",
+  "category_name": "Articles",
+  "industries": [
+    {
+      "term_id": 25,
+      "name": "Healthcare",
+      "slug": "healthcare__trashed",
+      "term_group": 0,
+      "term_taxonomy_id": 25,
+      "taxonomy": "tb_industry",
+      "description": "492",
+      "parent": 0,
+      "count": 4,
+      "filter": "raw"
+    }
+  ],
+  "solutions": [
+    {
+      "term_id": 397,
+      "name": "Software Engineering",
+      "slug": "software-engineering",
+      "term_group": 0,
+      "term_taxonomy_id": 397,
+      "taxonomy": "tb_solution",
+      "description": "6235",
+      "parent": 0,
+      "count": 8,
+      "filter": "raw"
+    }
+  ],
+  "technologies": [
+    {
+      "term_id": 149,
+      "name": "Wearables / IOT",
+      "slug": "wearables-iot",
+      "term_group": 0,
+      "term_taxonomy_id": 149,
+      "taxonomy": "tb_technology",
+      "description": "2043",
+      "parent": 0,
+      "count": 3,
+      "filter": "raw"
+    }
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://tblocks.com/wp-json/wp/v2/posts/646"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://tblocks.com/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://tblocks.com/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://tblocks.com/wp-json/wp/v2/users/9"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://tblocks.com/wp-json/wp/v2/comments?post=646"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 20,
+        "href": "https://tblocks.com/wp-json/wp/v2/posts/646/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 9141,
+        "href": "https://tblocks.com/wp-json/wp/v2/posts/646/revisions/9141"
+      }
+    ],
+    "acf:term": [
+      {
+        "embeddable": true,
+        "taxonomy": "tb_technology",
+        "href": "https://tblocks.com/wp-json/wp/v2/tb_technology/149"
+      },
+      {
+        "embeddable": true,
+        "taxonomy": "tb_solution",
+        "href": "https://tblocks.com/wp-json/wp/v2/tb_solution/397"
+      },
+      {
+        "embeddable": true,
+        "taxonomy": "tb_industry",
+        "href": "https://tblocks.com/wp-json/wp/v2/tb_industry/25"
+      },
+      {
+        "embeddable": true,
+        "taxonomy": "category",
+        "href": "https://tblocks.com/wp-json/wp/v2/categories/1"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://tblocks.com/wp-json/wp/v2/media/5829"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://tblocks.com/wp-json/wp/v2/media?parent=646"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://tblocks.com/wp-json/wp/v2/categories?post=646"
+      },
+      {
+        "taxonomy": "tb_industry",
+        "embeddable": true,
+        "href": "https://tblocks.com/wp-json/wp/v2/tb_industry?post=646"
+      },
+      {
+        "taxonomy": "tb_solution",
+        "embeddable": true,
+        "href": "https://tblocks.com/wp-json/wp/v2/tb_solution?post=646"
+      },
+      {
+        "taxonomy": "tb_technology",
+        "embeddable": true,
+        "href": "https://tblocks.com/wp-json/wp/v2/tb_technology?post=646"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

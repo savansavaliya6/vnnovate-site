@@ -1,0 +1,50 @@
+
+/* TABS NAV */
+.site-main .tabs-nav {
+  position: relative;
+}
+.site-main .tabs-nav-scroll {
+  margin: 0 0 2rem;
+  display: flex;
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.site-main .tabs-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.site-main .tabs-nav button:not(.tabs-nav-arrow),
+.site-main .tabs-nav label {
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  flex-grow: 1;
+  border-bottom: 4px solid #e6e6e6;
+}
+.site-main .tabs-nav button:not(.tabs-nav-arrow)[aria-selected="true"],
+.site-main .tabs-nav label {
+  color: #DA291C;
+  border-color: #DA291C;
+}
+
+.site-main .tabs-panel {
+  display: none;
+}
+.site-main .tabs-panel[aria-hidden="false"] {
+  display: block;
+}
+
+.site-main .tabs-nav-arrow {
+  position: absolute;
+  top: 10px;
+  height: 22px;
+  width: 22px;  
+  background-image: url('../../img/sprite-src/arrow-circle-gradient.svg');
+}
+.site-main .tabs-nav-arrow--prev {
+  left: 10px;
+  transform: rotate(180deg);
+}
+.site-main .tabs-nav-arrow--next {
+  right: 10px;  
+}

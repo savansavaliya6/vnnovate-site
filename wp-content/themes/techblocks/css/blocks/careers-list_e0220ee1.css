@@ -1,0 +1,49 @@
+.rec_facet_group {
+  display: none;
+}
+.rec-grp-heading {
+  font-size: 1.5rem;
+}
+.rec-job-info {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0 !important;    
+}
+.rec-job-info .rec-job-title {
+  margin: 0 0 0.5rem;
+}
+.rec-job-info .rec-job-title a {
+  color: #DA291C;
+  font-weight: 700;
+  text-decoration: none;
+}
+.rec-job-info .zrsite_City,
+.rec-job-info .zrsite_Country,
+.rec-job-info .zrsite_Job_Type,
+.rec-job-info .zrsite_Remote_Job {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.rec-job-info .zrsite_City span:first-of-type,
+.rec-job-info .zrsite_Country span:first-of-type,
+.rec-job-info .zrsite_Job_Type span:first-of-type {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .rec-job-info {
+    display: flex;
+    padding: 2rem 0;    
+  }
+  .rec-job-info .rec-job-title {
+    width: 50%;
+    margin: 0;
+  }
+  .rec-job-info .zrsite_City,
+  .rec-job-info .zrsite_Country,
+  .rec-job-info .zrsite_Job_Type,
+  .rec-job-info .zrsite_Remote_Job {
+    width: 16.67%;
+    padding: 0 1rem;
+  }
+}

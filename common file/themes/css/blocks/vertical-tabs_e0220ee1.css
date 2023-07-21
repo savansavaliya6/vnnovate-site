@@ -1,0 +1,21 @@
+.vertical-tabs {
+  position: relative;
+  overflow: hidden;
+}
+.tab-label[aria-selected="true"] {
+  color: #DA291C;
+}
+.dark .tab-label[aria-selected="true"] {
+  color: #ff4646;
+}
+.tab-panel {
+  display: none;
+}
+.tab-panel[aria-hidden="false"] {
+  display: block;
+}
+@media screen and (min-width:1024px) {
+  .vertical-tabs .article-image {
+    min-height: 350px;
+  }
+}

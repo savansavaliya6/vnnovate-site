@@ -1,0 +1,30 @@
+.wrapper .wrapper {
+  padding: 0 !important;
+}
+
+.wrapper .video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.wrapper .video-wrapper iframe {
+  width: 100%;
+  min-height: 100%;	
+  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+  min-width: 280%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translate(-50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper .video-wrapper iframe {
+    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+  }
+}

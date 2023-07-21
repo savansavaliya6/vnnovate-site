@@ -1,0 +1,27 @@
+.infographic-tabs {
+  position: relative;
+  overflow: hidden;
+}
+.infographic-tabs-header p strong {
+  color: #DA291C;
+}
+.infographic-tabs .tab-label[aria-selected="true"] {
+  background-color: #F5F8FD;
+}
+.infographic-tabs .tab-label[aria-selected="true"] .tab-icon {
+  display: block;
+}
+.infographic-tabs .tab-label[aria-selected="true"] .tab-white-icon {
+  display: none;
+}
+.infographic-tabs .tab-label[aria-selected="true"]::before {
+  background-color: #000;
+}
+.infographic-tabs .tab-panel {
+  display: none;
+}
+.infographic-tabs .tab-panel[aria-hidden="false"] {
+  display: block;
+}.tab-white-icon {
+    display: none;
+}

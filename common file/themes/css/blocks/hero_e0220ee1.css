@@ -1,0 +1,222 @@
+.hero.has-flip-text .hero-content {
+  /*max-width: 900px;*/
+  align-items: flex-start;
+  text-align: left;
+}
+.flip-text {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.flip-text + p {
+  margin-bottom: 20px;
+  max-width: none;
+}
+.flip-text-pretitle {
+  display: inline;
+  margin: 0;
+  line-height: 34px;
+}
+.flip-text-items-wrap {
+  overflow: hidden;
+  height: 34px;
+}
+.flip-text-items {
+ margin-top: 0;
+  text-align: left;
+  list-style: none;    
+  animation-name: change;
+  animation-duration: 10s ; 
+  animation-iteration-count:infinite;
+  animation-fill-mode: forwards;
+  height: 34px;
+animation: change 10s linear infinite;
+}
+.flip-text-items > span {
+  display: block;
+  line-height: 34px;
+  margin:0;
+}
+
+@media screen and (min-width: 575px) {
+  .flip-text {
+    line-height: 46px;
+    font-size: 28px;    
+    margin-bottom: 25px;
+  }
+  .flip-text + p {
+    margin-bottom: 35px;
+  }
+  .flip-text-items-wrap,
+  .flip-text-items {
+    height: 46px;
+  }
+  .flip-text-pretitle,
+  .flip-text-items > span {
+    line-height: 46px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flip-text {    
+    font-size: 36px;    
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .flip-text {    
+    font-size: 40px;    
+  }
+  .flip-text-pretitle {    
+    line-height: 48px;
+  }
+  .flip-text-items-wrap {
+    height: 48px;
+  }
+  .flip-text-items {
+    height: 48px;
+  }
+  .flip-text-items > span {
+    line-height: 48px;
+  }
+}
+
+@keyframes change {
+  0%, 33% {transform:translate3d(0,0,0);}
+  38%, 66% {transform:translate3d(0,-100%,0);}
+  71%, 90% {transform:translate3d(0,-200%,0);}
+98%, 100% {transform:translate3d(0, 0%,0);}
+
+}
+
+
+
+.hero-video-split .play-video {  
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-video-split .hero-video {
+  padding-bottom: 56.25%; 
+}
+.hero-video-split .hero-video .hero-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-video-split .hero-video .hero-embed iframe {
+  width: 100%;
+  min-height: 100%;
+  height: 56.25vw;
+  min-width: 280%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translate(-50%, -50%);
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-video-split .hero-video {
+    padding-bottom: 0;
+  }
+  .hero-video-split .hero-video::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 75%;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,6255,0) 100%);
+  }
+  .dark .hero-video-split .hero-video::before {
+    background: linear-gradient(90deg, rgba(18,52,65,1) 0%, rgba(18,52,65,0) 100%);
+  }
+}
+@media (min-width: 1024px) and (max-width: 1100px) {
+
+.flip-text {
+    font-size: 26px;
+}}
+
+@media (min-width: 1101px) and (max-width: 1450px) {
+
+.flip-text {
+    font-size: 28px;
+}}
+.flip-text-items strong, .flip-text-pretitle strong, h2 strong{
+    color: rgb(117 120 123/1);
+  font-weight: 300;
+}
+
+@media (min-width: 1024px) and (max-width:1279px) {
+    .hero.hero-video-split {
+        height: calc(100vh - 134px);
+
+
+    }
+
+    .hero-content p {
+        font-size: 1.0rem;
+        line-height: 1.4rem;
+    }
+
+    .hero-content {
+        padding-top: 3vw;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+}
+
+@media (min-width: 1280px) {
+    .hero.hero-video-split {
+        height: calc(100vh - 134px);
+
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+}
+
+@media (min-width: 2000px) and (max-width:2500px) {
+    .flip-text+p {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+    }
+
+}
+
+@media (min-width: 2501px) {
+    .flip-text+p {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-video {
+        order: 2;
+    }
+}
